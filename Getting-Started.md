@@ -10,7 +10,23 @@ The source to this plugin can be found in full under the Examples folder in the 
 
 ## Setting Up Your IDE
 
-Alright, to begin! You need to setup your IDE. I'll be using Xamarin Studio under the 
+Alright, to begin! You need to setup your IDE. We'll be using Xamarin Studio (as I am on a Mac). However, Visual Studio works just fine too and you should be able to follow along easily. If not, send us an email at opensource@disa.im and we'll figure it out.
+
+First, clone or download this repo. Then, open it. You should be presented with a screen similar to this:
+
+![](http://i.imgur.com/cjidLi9.png)
+
+Now, lets add our WackyMessenger project. Add a new project, and call it Disa.Framework.WackyMessenger.
+
+> Aside: for plugins to properly work, they need to be labelled with the Disa.Framework prefix. If for example, I was writing a Telegram plugin, I'd label the plugin project Disa.Framework.Telegram.
+
+There will now be three projects in your solution:
+
+![](http://i.imgur.com/QvYXp6V.png)
+
+
+
+
 
 
 
