@@ -1,0 +1,1 @@
+This page will give developers advise on the best practices to developing a good plugin.
