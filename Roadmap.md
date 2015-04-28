@@ -1,0 +1,3 @@
+There's not much to really say about the Roadmap currently. This page will be kept updated often depending on the gist of the Github community.
+
+That said though, eventually a slimmed-down version of Disa.Android will be open-sourced. This will enable complete debugging and allow contributors to pull-request features back into the official Play Store build. This is a high priority of the Disa team (below documentation, however).
