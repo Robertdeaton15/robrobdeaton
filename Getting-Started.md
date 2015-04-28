@@ -8,6 +8,8 @@ You'll first be using the Disa.Terminal front-end for quick deployment and debug
 
 The source to this plugin can be found in full under the Examples folder in the main directory.
 
+## Definitions Before we Begin
+
 ## Setting Up Your IDE
 
 Alright, to begin! You need to setup your IDE. We'll be using Xamarin Studio (as I am on a Mac). However, Visual Studio works just fine too and you should be able to follow along easily. If not, send us an email at opensource@disa.im and we'll figure it out.
@@ -197,7 +199,135 @@ In the event that Authenticate or Connect doesn't succeed, and can just pass up 
 
 # Service Stop Process
 
-When a 
+When a service is stopped, two methods are called: Deauthenticate and Disconnect. The order once again depends on the procedure type. Use these methods to teardown your service.
+
+In WackyMessenger, we can simply ignore them, as there's nothing to teardown:
+```c#
+public override void Deauthenticate()
+{
+    // do nothing
+}
+
+public override void Disconnect()
+{
+    // do nothing
+}
+```
+
+## Interim Summary
+
+Your code should now look like this:
+
+```c#
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Disa.Framework.Bubbles;
+
+namespace Disa.Framework.WackyMessenger
+{
+    [ServiceInfo("WackyMessenger", true, false, false, false, false, typeof(WackyMessengerSettings), 
+        ServiceInfo.ProcedureType.ConnectAuthenticate)]
+    public class WackyMessenger : Service
+    {
+        public override bool Initialize(DisaSettings settings)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool InitializeDefault()
+        {
+            return true;
+        }
+
+        public override bool Authenticate(WakeLock wakeLock)
+        {
+            return true;
+        }
+
+        public override void Deauthenticate()
+        {
+            // do nothing
+        }
+
+        public override void Connect(WakeLock wakeLock)
+        {
+            // do nothing
+        }
+
+        public override void Disconnect()
+        {
+            // do nothing
+        }
+
+        public override string GetIcon(bool large)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerable<Bubble> ProcessBubbles()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void SendBubble(Bubble b)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool BubbleGroupComparer(string first, string second)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupLegibleId(BubbleGroup group, Action<string> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupName(BubbleGroup group, Action<string> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPhoto(BubbleGroup group, Action<DisaThumbnail> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPartyParticipants(BubbleGroup group, Action<DisaParticipant[]> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupUnknownPartyParticipant(BubbleGroup group, string unknownPartyParticipant, Action<DisaParticipant> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPartyParticipantPhoto(DisaParticipant participant, Action<DisaThumbnail> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupLastOnline(BubbleGroup group, Action<long> result)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class WackyMessengerSettings : DisaSettings
+    {
+        // store settings in here:
+        // e.g: public string Username { get; set; }
+    }
+}
+```
+
+## Implementing bubble sending
+
+Great. So now, the service will both start and stop. Its pretty damn useless though. Lets add some sending:
+
 
 
 
