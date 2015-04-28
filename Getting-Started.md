@@ -328,6 +328,33 @@ namespace Disa.Framework.WackyMessenger
 
 Great. So now, the service will both start and stop. Its pretty damn useless though. Lets add some sending:
 
+```c#
+ public override void SendBubble(Bubble b)
+ {
+ 	var textBubble = b as TextBubble;
+ 	if (textBubble != null) 
+	{
+ 		Utils.Delay(2000).Wait();
+ 		Platform.ScheduleAction(1000, new WakeLockBalancer.ActionObject(() = > 
+		{
+ 			EventBubble(new TextBubble(Time.GetNowUnixTimestamp(), Bubble.BubbleDirection.Incoming,
+ 			textBubble.Address, null, false, this, Reverse(textBubble.Message)));
+ 		}, WakeLockBalancer.ActionObject.ExecuteType.TaskWithWakeLock));
+ 	}
+ }
+``
+
+Alright. So what's happening here? We wait 2 seconds (a poor simulation of how long it takes to send a message to a server), and then we schedule a wake-locked action to occur in 1 second. That action is an incoming message of the message we sent, reversed - exactly as we set out to do. The latter is accomplished by the EventBubble method call to which we got access to via the aforementioned _eventDrivenBubbles_ flag.
+
+After that, the SendBubble method ends - no exception has been encountered. That means that the Framework will mark the message successfully as sent. Fantastic! If any any exception is thrown up the stack in SendBubble (that is, to the Framework) then the Framework will mark the bubble as failed and alert the user via a notification if necessary. Moreover, if you catch that exception in the SendBubble method, and consequently throw a ServiceQueuedBubbleException back up the stack to the Framework, then you'll ask the Framework to resend to bubble. The Framework will then deal with sending the bubble a later time.
+
+In addition to scheduling a once-off action, we can ask the Framework to schedule a reoccurring action (perfect for keep-alive heartbeats).
+
+## ProcessBubbles
+
+Even though WackyMessenger does not use the ProcessBubbles method, its important to explain a bit about it. Firstly, it's an iterator block. In a trivial messenger setup, you'll call upon your Socket.Receive blocking method in ProcessBubbles. When data comes in, it'll be processed by your serializer (XML, JSON, custom, etc.), and then objectified into a Disa Framework bubble. A mere 'yield return bubble' will then catapult the bubble back to the Framework, in the exact same way that EventBubble behaves.
+
+
 
 
 
