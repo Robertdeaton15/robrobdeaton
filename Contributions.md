@@ -12,3 +12,5 @@ Here's a quick breakdown of what can be done:
     * To improve this, a table should be kept updated. When Disa is first initialized, this table is then read from. This will significantly improve startup performance of large conversation lists. If you are interested in working on this, send us an email at opensource@disa.im
 
 * Introduce typing bubbles for parties.
+
+* More to come...
