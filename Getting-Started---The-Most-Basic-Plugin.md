@@ -4,11 +4,7 @@ If you ventured into here by now, you're probably wanting to know how to start b
 
 This tutorial will guide you into building a very basic plugin for WackyMessenger (a made-up service). WackyMessenger is incredibly basic - it only supports text messages. When a user sends a text message, it waits a few seconds, and then responds to the user with his or her message reversed.
 
-You'll first be using the Disa.Terminal front-end for quick deployment and debugging. Then, once we are satisfied with WackyMessenger, you'll be deploying it to the Disa Android application found on the Play Store.
-
-The source to this plugin can be found in full under the Examples folder in the main directory.
-
-## Definitions Before We Begin
+The source to this plugin can be found in full under the Examples/GettingStarted1 folder in the main directory.
 
 ## Setting Up Your IDE
 
@@ -342,7 +338,7 @@ Great. So now, the service will both start and stop. Its pretty damn useless tho
  		}, WakeLockBalancer.ActionObject.ExecuteType.TaskWithWakeLock));
  	}
  }
-``
+```
 
 Alright. So what's happening here? We wait 2 seconds (a poor simulation of how long it takes to send a message to a server), and then we schedule a wake-locked action to occur in 1 second. That action is an incoming message of the message we sent, reversed - exactly as we set out to do. The latter is accomplished by the EventBubble method call to which we got access to via the aforementioned _eventDrivenBubbles_ flag.
 
@@ -353,6 +349,319 @@ In addition to scheduling a once-off action, we can ask the Framework to schedul
 ## ProcessBubbles
 
 Even though WackyMessenger does not use the ProcessBubbles method, its important to explain a bit about it. Firstly, it's an iterator block. In a trivial messenger setup, you'll call upon your Socket.Receive blocking method in ProcessBubbles. When data comes in, it'll be processed by your serializer (XML, JSON, custom, etc.), and then objectified into a Disa Framework bubble. A mere 'yield return bubble' will then catapult the bubble back to the Framework, in the exact same way that EventBubble behaves.
+
+## Interim Summary 2
+
+Alright, now you'll be left with something like this:
+
+```c#
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Disa.Framework.Bubbles;
+
+namespace Disa.Framework.WackyMessenger
+{
+    [ServiceInfo("WackyMessenger", true, false, false, false, false, typeof(WackyMessengerSettings), 
+        ServiceInfo.ProcedureType.ConnectAuthenticate)]
+    public class WackyMessenger : Service
+    {
+        public override bool Initialize(DisaSettings settings)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool InitializeDefault()
+        {
+            return true;
+        }
+
+        public override bool Authenticate(WakeLock wakeLock)
+        {
+            return true;
+        }
+
+        public override void Deauthenticate()
+        {
+            // do nothing
+        }
+
+        public override void Connect(WakeLock wakeLock)
+        {
+            // do nothing
+        }
+
+        public override void Disconnect()
+        {
+            // do nothing
+        }
+
+        public override string GetIcon(bool large)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerable<Bubble> ProcessBubbles()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static string Reverse( string s )
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse( charArray );
+            return new string( charArray );
+        }
+
+        public override void SendBubble(Bubble b)
+        {
+            var textBubble = b as TextBubble;
+            if (textBubble != null)
+            {
+                Utils.Delay(2000).Wait();
+                Platform.ScheduleAction(1000, new WakeLockBalancer.ActionObject(() =>
+                {
+                    EventBubble(new TextBubble(Time.GetNowUnixTimestamp(), Bubble.BubbleDirection.Incoming,
+                        textBubble.Address, null, false, this, Reverse(textBubble.Message)));
+                }, WakeLockBalancer.ActionObject.ExecuteType.TaskWithWakeLock));
+            }
+        }
+
+        public override bool BubbleGroupComparer(string first, string second)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupLegibleId(BubbleGroup group, Action<string> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupName(BubbleGroup group, Action<string> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPhoto(BubbleGroup group, Action<DisaThumbnail> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPartyParticipants(BubbleGroup group, Action<DisaParticipant[]> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupUnknownPartyParticipant(BubbleGroup group, string unknownPartyParticipant, Action<DisaParticipant> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPartyParticipantPhoto(DisaParticipant participant, Action<DisaThumbnail> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupLastOnline(BubbleGroup group, Action<long> result)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class WackyMessengerSettings : DisaSettings
+    {
+        // store settings in here:
+        // e.g: public string Username { get; set; }
+    }
+}
+```
+
+## The Final Tid-bits
+
+We'll need to implement the BubbleGroupComparer method. This method is basically how Disa deals with grouping Bubbles into BubbleGroups. A BubbleGroup is synonymous with a thread or conversation.
+
+In most cases, you'll just do an ordinal string comparison (the '==' in C#). However, in some cases you may need to use an algorithm - such as a PhoneNumberComparer that will yield equality to the number tuple +1 604 393 2838 and 604-393-2838. You can find this comparer in PhoneBook.cs.
+
+In WackyMessenger's case, ordinal string comparison will suffice:
+
+```C#
+public override bool BubbleGroupComparer(string first, string second)
+{
+	return first == second;
+}
+```
+
+Next off, GetBubbleGroupLegibleId. Some conversations need an additional mark on them in the conversation list (in a SMS/MMS plugin, we need to label the conversation in the conversation list with a Mobile, Work, Home, tag).
+
+In WackyMessenger, we don't need such a thing! Leave this method be - we don't need to touch it.
+
+Next up, GetBubbleGroupName. This should be pretty self explanatory. How do I relate the address "604 232 9830" to "Meghan"? This is that method.
+
+In WackyMessenger's case, its so simple, that we don't really have any way to relate an address back to who it is. After all, it is just repeating what we say. Therefore, the name of the BubbleGroup will be the address of it. Simple, right?
+
+```C#
+public override Task GetBubbleGroupName(BubbleGroup group, Action<string> result)
+{
+	return Task.Factory.StartNew(() =>
+	{
+		result(group.Address);
+	});
+}
+```
+
+It should be noted that this is a common pattern that you'll be seeing in a lot of Disa's interface code. We try to enforce the plugin developer to use the Task Programming Library as tasks are cheap, and the Framework is incredibly asynchronous. When the result is found, you call the provided callback, _result_, with the, well, result.
+
+Next, GetBubbleGroupPhoto. This gets the photo of the conversation. Once again, WackyMessenger is simple and dumb. Lets just tell the framework to generate the default thumbnail.
+
+```c#
+public override Task GetBubbleGroupPhoto(BubbleGroup group, Action<DisaThumbnail> result)
+{
+	return Task.Factory.StartNew(() =>
+	{
+		result(null);
+	});
+}
+```
+
+The next three methods, GetBubbleGroupPartyParticipants, GetBubbleGroupUnknownPartyParticipant, GetBubbleGroupPartyParticipantPhoto are all Party orientated. WackyMessenger doesn't support parties yet. We'll ignore these for now - we'll come back to it in the later tutorials when we actually give WackyMessenger Party support.
+
+And finally, GetBubbleGroupLastOnline, fetches the last seen time of the specified conversation. The BubbleGroup passed into here will always be a solo (i.e: not a Party/GroupChat). WackyMessenger doesn't support last seen times. Therefore, we just ignore it.
+
+## Interim Summary 3
+
+At this point, you should have the following code:
+
+```c#
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Disa.Framework.Bubbles;
+
+namespace Disa.Framework.WackyMessenger
+{
+    [ServiceInfo("WackyMessenger", true, false, false, false, false, typeof(WackyMessengerSettings), 
+        ServiceInfo.ProcedureType.ConnectAuthenticate)]
+    public class WackyMessenger : Service
+    {
+        public override bool Initialize(DisaSettings settings)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool InitializeDefault()
+        {
+            return true;
+        }
+
+        public override bool Authenticate(WakeLock wakeLock)
+        {
+            return true;
+        }
+
+        public override void Deauthenticate()
+        {
+            // do nothing
+        }
+
+        public override void Connect(WakeLock wakeLock)
+        {
+            // do nothing
+        }
+
+        public override void Disconnect()
+        {
+            // do nothing
+        }
+
+        public override string GetIcon(bool large)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerable<Bubble> ProcessBubbles()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static string Reverse( string s )
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse( charArray );
+            return new string( charArray );
+        }
+
+        public override void SendBubble(Bubble b)
+        {
+            var textBubble = b as TextBubble;
+            if (textBubble != null)
+            {
+                Utils.Delay(2000).Wait();
+                Platform.ScheduleAction(1000, new WakeLockBalancer.ActionObject(() =>
+                {
+                    EventBubble(new TextBubble(Time.GetNowUnixTimestamp(), Bubble.BubbleDirection.Incoming,
+                        textBubble.Address, null, false, this, Reverse(textBubble.Message)));
+                }, WakeLockBalancer.ActionObject.ExecuteType.TaskWithWakeLock));
+            }
+        }
+
+        public override bool BubbleGroupComparer(string first, string second)
+        {
+            return first == second;
+        }
+
+        public override Task GetBubbleGroupLegibleId(BubbleGroup group, Action<string> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupName(BubbleGroup group, Action<string> result)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                result(group.Address);
+            });
+        }
+
+        public override Task GetBubbleGroupPhoto(BubbleGroup group, Action<DisaThumbnail> result)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                result(null);
+            });
+        }
+
+        public override Task GetBubbleGroupPartyParticipants(BubbleGroup group, Action<DisaParticipant[]> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupUnknownPartyParticipant(BubbleGroup group, string unknownPartyParticipant, Action<DisaParticipant> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPartyParticipantPhoto(DisaParticipant participant, Action<DisaThumbnail> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupLastOnline(BubbleGroup group, Action<long> result)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    public class WackyMessengerSettings : DisaSettings
+    {
+        // store settings in here:
+        // e.g: public string Username { get; set; }
+    }
+}
+```
+
+Wonderful! We actually now have enough code to run out first plugin! ^^ exciting ^^
+
+
 
 
 
