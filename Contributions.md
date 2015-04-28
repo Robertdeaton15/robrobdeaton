@@ -2,6 +2,11 @@ There's a lot of work to be done on the Framework. Also, building new front-ends
 
 Here's a quick breakdown of what can be done:
 
+* Documentation - We need a lot of help in this category. 
+    1. If you're really good at formatting markdown or making edits to to any of the Wiki contents, you are more than welcome to do so.
+    2. If you'd like to make more tutorials, add glossaries, etc. (really anything Wiki related), you are more than welcome.
+    3. Documentation in code is also a must! If you'd like to work on this, you're also more than welcome!
+
 * Build multiple GUI Front-Ends (one for Mac, Windows, Linux, iOS, Windows Phone, etc.) Mono/.NET has really good support for multiple platform tools. Xamarin.Mac/MonoMac will be a good candidate for Mac, Windows has WPF/WinForms, iOS has Xamarin.iOS, and Linux has GTK#. XWT (https://github.com/mono/xwt) also provides a fantastic cross-platform approach for the smaller bits of UI that look fairly similar across all platforms.
 
 * Make Disa.Terminal really awesome and feature rich.
@@ -13,4 +18,4 @@ Here's a quick breakdown of what can be done:
 
 * Introduce typing bubbles for parties.
 
-* More to come...
+* More to come.
