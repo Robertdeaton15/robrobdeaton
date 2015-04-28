@@ -4,7 +4,7 @@ If you ventured into here by now, you're probably wanting to know how to start b
 
 This tutorial will guide you into building a very basic plugin for WackyMessenger (a made-up service). WackyMessenger is incredibly basic - it only supports text messages. When a user sends a text message, it waits a few seconds, and then responds to the user with his or her message reversed.
 
-The source to this plugin can be found in full under the Examples/GettingStarted1 folder in the main directory.
+The source to this plugin can be found in full under the Examples/TheMostBasicPlugin folder in the main directory.
 
 ## Setting Up Your IDE
 
