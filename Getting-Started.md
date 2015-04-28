@@ -8,7 +8,7 @@ You'll first be using the Disa.Terminal front-end for quick deployment and debug
 
 The source to this plugin can be found in full under the Examples folder in the main directory.
 
-## Definitions Before we Begin
+## Definitions Before We Begin
 
 ## Setting Up Your IDE
 
