@@ -662,7 +662,42 @@ namespace Disa.Framework.WackyMessenger
 
 Wonderful! We actually now have enough code to run out first plugin! ^^ exciting ^^
 
+## Let's Run It!
 
+Add Disa.Framework.WackyMessenger as a reference in Disa.Terminal.
+
+Go into Program.cs in Disa.Terminal, and change:
+```c#
+Initialize(new Service[] { });
+```
+into
+```c#
+Initialize(new [] { new WackyMessenger() });
+```
+Note: you may have to add a using statement to the top of Program.cs here.
+
+Now, launch Disa.Terminal.
+
+You have to register a service before you can use it. So,
+Type:
+```
+register WackyMessenger
+```
+You'll only have to do this once. Disa has now saved this setting onto your disk.
+Then type,
+```
+startall
+```
+All the services will now start.
+We can now test our plugin:
+```
+send WackyMessenger Meghan "Hello there"
+```
+Now, wait a bit.. and then you should get a response!
+
+![](http://i.imgur.com/14gX5WO.png)
+
+Wahoo, we did it!
 
 
 
