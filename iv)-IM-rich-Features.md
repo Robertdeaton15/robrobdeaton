@@ -1,1 +1,1 @@
-This page will outline how to integrate all the IM-rich features into your plugin. Some of them include: presence, last online, read receipts, typing bubbles, sync agents, etc.
+This page will outline how to integrate all the IM-rich features into your plugin. Some of them include: presence, last online, read receipts, typing bubbles, bubblegroup sync agents, etc.
