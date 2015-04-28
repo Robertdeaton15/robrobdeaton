@@ -1,1 +1,1 @@
-TODO
+This page will explore using Xamarin.Forms to build Setting pages that will run on all mobile devices.
