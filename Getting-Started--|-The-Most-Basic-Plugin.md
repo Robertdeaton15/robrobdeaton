@@ -699,6 +699,184 @@ Now, wait a bit.. and then you should get a response!
 
 Wahoo, we did it!
 
+## A Big Problem | Duplicate Bubbles
+
+It's possible that Disa may send a bubbles twice (e.g: lost acknowledgment but server actually received the message which results in Disa resending the bubble again) - which is quite common when you have flaky internet connections. This isn't a flaw accustomed to just Disa - many other clients have the exact same issue.
+
+To address this issue, bubbles typically get unique IDs associated with them. The bubble is then sent to the server along with an ID. If the server gets a duplicate ID, then it merely discards of it.
+
+To implement this in Disa, implement the IVisualBubbleServiceId interface:
+
+```c#
+public void AddVisualBubbleIdServices(VisualBubble bubble)
+{
+	throw new NotImplementedException();
+}
+
+public bool DisctinctIncomingVisualBubbleIdServices()
+{
+	throw new NotImplementedException();
+}
+```
+
+You are free to set the VisualBubble.IdService and VisualBubble.IdService2 properties in AddVisualBubbleIdServices. AddVisualBubbleIdServices is called just before the bubble reached SendBubble in your service code.
+
+DisctinctIncomingVisualBubbleIdServices asks if you want to filter any duplicate incoming bubbles. There's also the possibility that the server may send you multiple messages of the same ID. If this method returns true, it will filter those. If it returns false, it will not filter them.
+
+In WackyMessenger's case, it's not necessary to include this. But for the sake of an example, here's the full-code with it implemented:
+
+```c#
+using System;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using Disa.Framework.Bubbles;
+
+namespace Disa.Framework.WackyMessenger
+{
+    [ServiceInfo("WackyMessenger", true, false, false, false, false, typeof(WackyMessengerSettings), 
+        ServiceInfo.ProcedureType.ConnectAuthenticate, typeof(TextBubble))]
+    public class WackyMessenger : Service, IVisualBubbleServiceId
+    {
+        private string _deviceId;
+        private int _bubbleSendCount;
+
+        public override bool Initialize(DisaSettings settings)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool InitializeDefault()
+        {
+            _deviceId = Time.GetNowUnixTimestamp().ToString();
+            return true;
+        }
+
+        public override bool Authenticate(WakeLock wakeLock)
+        {
+            return true;
+        }
+
+        public override void Deauthenticate()
+        {
+            // do nothing
+        }
+
+        public override void Connect(WakeLock wakeLock)
+        {
+            // do nothing
+        }
+
+        public override void Disconnect()
+        {
+            // do nothing
+        }
+
+        public override string GetIcon(bool large)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override IEnumerable<Bubble> ProcessBubbles()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static string Reverse( string s )
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse( charArray );
+            return new string( charArray );
+        }
+
+        public override void SendBubble(Bubble b)
+        {
+            var textBubble = b as TextBubble;
+            if (textBubble != null)
+            {
+                Utils.Delay(2000).Wait();
+                Platform.ScheduleAction(1, new WakeLockBalancer.ActionObject(() =>
+                {
+                    EventBubble(new TextBubble(Time.GetNowUnixTimestamp(), Bubble.BubbleDirection.Incoming,
+                        textBubble.Address, null, false, this, Reverse(textBubble.Message)));
+                }, WakeLockBalancer.ActionObject.ExecuteType.TaskWithWakeLock));
+            }
+        }
+
+        public override bool BubbleGroupComparer(string first, string second)
+        {
+            return first == second;
+        }
+
+        public override Task GetBubbleGroupLegibleId(BubbleGroup group, Action<string> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupName(BubbleGroup group, Action<string> result)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                result(group.Address);
+            });
+        }
+
+        public override Task GetBubbleGroupPhoto(BubbleGroup group, Action<DisaThumbnail> result)
+        {
+            return Task.Factory.StartNew(() =>
+            {
+                result(null);
+            });
+        }
+
+        public override Task GetBubbleGroupPartyParticipants(BubbleGroup group, Action<DisaParticipant[]> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupUnknownPartyParticipant(BubbleGroup group, string unknownPartyParticipant, Action<DisaParticipant> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupPartyParticipantPhoto(DisaParticipant participant, Action<DisaThumbnail> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override Task GetBubbleGroupLastOnline(BubbleGroup group, Action<long> result)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddVisualBubbleIdServices(VisualBubble bubble)
+        {
+            bubble.IdService = _deviceId + ++_bubbleSendCount;
+        }
+
+        public bool DisctinctIncomingVisualBubbleIdServices()
+        {
+            return true;
+        }
+    }
+
+    public class WackyMessengerSettings : DisaSettings
+    {
+        // store settings in here:
+        // e.g: public string Username { get; set; }
+    }
+}
+```
+
+Notice that we get the Unix timestamp here, and then append a message counter to it. This ensures that Message Ids are always unique.
+
+## In Summary
+
+In summary you have learned how to make your first plugin, and also quite a bit about the Disa Framework. 
+
+In the next tutorial, we'll archive this plugin up and show it working on Android.
+
+
+
 
 
 
