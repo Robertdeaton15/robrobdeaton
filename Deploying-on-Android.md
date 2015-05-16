@@ -16,7 +16,7 @@ At this point of time, unfortunately Disa.Android does not support PCL work. If 
 
 * Open the references from your Nuget packages in your IDE, effectively opening Assembly Browser. Look for the TargetFramework, it should be something along the lines of ".NETFramework,Version=v4.5". If it has the substring "PCL" in it, you'll need to use the aforementioned process. Do these for all of the PCL references.
 
-## Registering Your Plugin for Deployment
+## Registering Your Plugin For Deployment
 
 To register the Android deployment, fire up Disa.Terminal, and type:
 
