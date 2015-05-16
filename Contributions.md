@@ -18,4 +18,8 @@ Here's a quick breakdown of what can be done:
 
 * Introduce typing bubbles for parties.
 
+* Disa plugins cannot yet use referenced PCLs. Currently, all assemblies must be compiled with the Mono / .NET 4.5 target framework. To make this possible, you will need to use Mono.Cecil to remap all System.* reference libraries to their .Net 4.5 counterpart. For instance, "System.Linq.dll" will be remapped to "System.Core.dll". Changing an assemblies mapping is easy (with Cecil: iterating through a module's AssemblyReferences, and change each one's Name to the .Net 4.5 counterpart) - one just needs to build a mapping.
+    * Unfortunately, it's not this simple in some cases. Some Types in one PCL namespace will be in multiple .Net 4.5 assemblies (e.g: try mapping System.Collections.Concurrent.dll). Thus, one will have to find these exceptions and fix the type's scopes which reference them. This should be fairly easy to accomplish with Mono.Cecil.
+
+
 * More to come.
