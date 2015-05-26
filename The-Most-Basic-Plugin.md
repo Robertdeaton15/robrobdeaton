@@ -332,7 +332,7 @@ Great. So now, the service will both start and stop. Its pretty damn useless tho
  	if (textBubble != null) 
 	{
  		Utils.Delay(2000).Wait();
- 		Platform.ScheduleAction(2, new WakeLockBalancer.ActionObject(() = > 
+ 		Platform.ScheduleAction(1, new WakeLockBalancer.ActionObject(() = > 
 		{
  			EventBubble(new TextBubble(Time.GetNowUnixTimestamp(), Bubble.BubbleDirection.Incoming,
  			textBubble.Address, null, false, this, Reverse(textBubble.Message)));
