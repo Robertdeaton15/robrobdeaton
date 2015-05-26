@@ -339,6 +339,13 @@ Great. So now, the service will both start and stop. Its pretty damn useless tho
  		}, WakeLockBalancer.ActionObject.ExecuteType.TaskWithWakeLock));
  	}
  }
+
+ private static string Reverse(string s)
+ {
+	char[] charArray = s.ToCharArray();
+	Array.Reverse(charArray);
+	return new string(charArray);
+ }
 ```
 
 Alright. So what's happening here? We wait 2 seconds (a poor simulation of how long it takes to send a message to a server), and then we schedule a wake-locked action to occur in 1 second. That action is an incoming message of the message we sent, reversed - exactly as we set out to do. The latter is accomplished by the EventBubble method call to which we got access to via the aforementioned _eventDrivenBubbles_ flag.
@@ -874,7 +881,6 @@ Notice that we get the Unix timestamp here, and then append a message counter to
 In summary you have learned how to make your first plugin, and also quite a bit about the Disa Framework. 
 
 In the next tutorial, we'll archive this plugin up and show it working on Android.
-
 
 
 
