@@ -188,7 +188,7 @@ public override bool Authenticate(WakeLock wakeLock)
 }
 ```
 
-What exactly is that WakeLock? Whenever Disa executes one of these methods, it holds a wake lock on the method's duration so the phone doesn't fall asleep and stop your service's starting process. However, wake locks are expensive to battery life. If you know that you can temporarily free the wakelock (such as when you're awaiting for a response from a server), you can use WakeLock.TemporaryFree disposable (wrap it in a using statement) to do so). Battery life is important, and this a well tuned plugin can save good battery life.
+What exactly is that WakeLock? Whenever Disa executes one of these methods, it holds a wake lock on the method's duration so the phone doesn't fall asleep and stop your service's starting process. However, wake locks are expensive to battery life. If you know that you can temporarily free the wakelock (such as when you're awaiting for a response from a server), you can use WakeLock.TemporaryFree disposable (wrap it in a using statement) to do so.
 
 > Aside: Whenever you are awaiting data from a socket connection (including HTTP connections) in Android, you can allow the device to fall asleep. When there's a response from the socket, your device will be woken back up, allowing the newly presented data to be processed. This is the motivation behind the temporary free optimization.
 
