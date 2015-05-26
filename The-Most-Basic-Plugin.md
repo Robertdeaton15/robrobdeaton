@@ -147,6 +147,7 @@ At the very top of the Service class, we specify its information (i.e: how the f
 ```
 
 * We will be using event driven bubbles. What does this mean? Some services require a dedicated thread to be infinitely polling against a keep-alive connection. By setting event driven bubbles to false, the ProcessBubbles iterator block is called in an infinite threaded loop while the service is running. Thus, the Framework completely manages this aspect of keeping the _poller_ constantly alive. By settings event driven bubbles to true, you are effectively telling the Framework: "I want to manage all the polling myself, and invoke off the EventBubble method whenever I a new bubble comes in."
+
 * We will not be using media progress. We don't support anything but text bubbles. If your service can support giving feedback back to the client on the upload process of media bubbles (images, videos, etc), you'll set this flag to true and then use the Transfer.Progress callback in the associated media bubble you're uploading.
 * This service does not use internet. If it we set this to true, then the Framework will ensure that the service is stopped if there is no internet connection.
 * This service does not support battery savings mode.
