@@ -890,6 +890,13 @@ In summary you have learned how to make your first plugin, and also quite a bit 
 
 In the next tutorial, we'll archive this plugin up and show it working on Android.
 
+## Where to From Here
+
+Apply an icon to your WackyMessenger plugin: https://github.com/Disa-im/DisaOpenSource/wiki/Creating-A-Plugin-Icon
+
+Deploying WackyMessenger to Android: https://github.com/Disa-im/DisaOpenSource/wiki/Deploying-on-Android
+
+
 
 
 
