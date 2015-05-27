@@ -21,7 +21,7 @@ These icons are the base64'd string representations of the raw byte contents of 
 
 ## Specifications
 
-PNG please. No GIF/JPEG/WEBP etc.
+PNG please. No GIF, JPEG, WEBP, etc.
 
 Large icon dimensions (width x height): 200x200
 
