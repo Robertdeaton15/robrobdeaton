@@ -12,5 +12,6 @@ The tooling will enable developers to push a plugin updater easier than pushing 
 
 ## Sharing Your Plugin
 
-Post your plugin here when you want to let the world use it! 
+Post your plugin at:
 https://github.com/Disa-im/DisaOpenSource/issues/3
+Remember to encapsulated the generated QR code string from this tooling with the [plugin] ... [/plugin] tag.
