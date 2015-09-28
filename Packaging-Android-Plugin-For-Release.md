@@ -9,3 +9,8 @@ Don't sweat it. We will work with you to get your plugin released. Drop us an em
 This tooling allows you to completely automate the process - everything from packaging and signing your plugin with a certificate to deploying it on the cloud.
 
 The tooling will enable developers to push a plugin updater easier than pushing an APK update to the play store (literally).
+
+## Sharing Your Plugin
+
+Post your plugin here when you want to let the world use it! 
+https://github.com/Disa-im/DisaOpenSource/issues/3
