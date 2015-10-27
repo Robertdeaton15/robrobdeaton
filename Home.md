@@ -1,4 +1,4 @@
-#The Disa Framework - Documentation#
+![Disa Developers](http://s30.postimg.org/se77wg0b5/disa_dev_banner.png)
 
 Hi there developer!
 This documentation should assist you when developing that next awesome plugin against the Disa Framework.
