@@ -14,7 +14,7 @@ First, clone or download this repo. Then, open it. You should be presented with 
 
 ![](http://i.imgur.com/cjidLi9.png)
 
-Now, lets add our WackyMessenger project. Add a new Library project (not the PCL one!), and call it Disa.Framework.WackyMessenger.
+Now, lets add our WackyMessenger project. Add a new Library project (not the PCL one!) by choosing .NET from "Other", then choosing "Library", and calling it Disa.Framework.WackyMessenger.
 
 > Aside: for plugins to properly work, they need to be labelled with the Disa.Framework prefix. If for example, I was writing a Telegram plugin, I'd label the plugin project Disa.Framework.Telegram.
 
