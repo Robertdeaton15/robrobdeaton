@@ -8,6 +8,8 @@ A bubble can either be a visual message (image, video, audio, file, text, etc.) 
 
 The concept of a bubble is essentially the core idea in Disa. The framework and services (plugins) constantly catapult bubbles back and forth to/from each other. These bubbles literally end up making everything happen. Where there's more information needed about a collection of bubbles (e.g: what are they all collectively called?!), a BubbleGroup is defined.
 
+[Read more about the properties that bubbles can have.](//github.com/Disa-im/DisaOpenSource/wiki/Bubble-Properties)
+
 ### BubbleGroup
 
 A bubble group is a collection of bubbles. A bubble group can also have a name, image thumbnail, presence, last seen time, etc. associated with it. To see the full list, please visit BubbleGroup.cs in the Disa.Framework folder.
