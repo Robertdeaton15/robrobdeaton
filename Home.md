@@ -35,7 +35,7 @@ _INTERMEDIATE LEVEL_
 
 **[Packaging for Release](//github.com/Disa-im/DisaOpenSource/wiki/Packaging-Android-Plugin-For-Release)**  
 Discover how to package your Disa Android plugin - the right way - so it can be released via a Disa QR code.  
-Also you learn how share your new plugin correctly.
+Also you learn how share your new plugin correctly.  
 _INTERMEDIATE LEVEL_
 
 
