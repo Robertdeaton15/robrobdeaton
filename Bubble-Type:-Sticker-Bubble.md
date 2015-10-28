@@ -10,7 +10,7 @@ The sticker bubble is used for displaying sticker messages (e.g. stickers on Fac
 
 ###Resource Type
 ```c#
-Type bubble.AudioType
+Type bubble.StickerType
 ```
 Contains the resource type of the Bubble's audio.  
 Can be either `Url` for a URL requested image file, or `File` for an attached image file
