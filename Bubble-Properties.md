@@ -1,4 +1,5 @@
-This reference page contains all properties that can be read from a Bubble object.
+#####This reference page contains properties that can be read from ALL Bubble objects.  
+#####[For a list of specialized bubbles and their properties, check out this page.](//github.com/Disa-im/DisaOpenSource/wiki/Bubble-Types/)
 
 ##Status
 ```c#
