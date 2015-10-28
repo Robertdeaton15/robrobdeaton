@@ -690,6 +690,9 @@ into
 Initialize(new [] { new WackyMessenger() });
 ```
 Note: you may have to add a using statement to the top of Program.cs here.
+```c#
+using Disa.Framework.WackyMessenger;
+```
 
 Now, launch Disa.Terminal.
 
@@ -895,7 +898,6 @@ In the next tutorial, we'll archive this plugin up and show it working on Androi
 Apply an icon to your WackyMessenger plugin: https://github.com/Disa-im/DisaOpenSource/wiki/Creating-A-Plugin-Icon
 
 Deploying WackyMessenger to Android: https://github.com/Disa-im/DisaOpenSource/wiki/Deploying-on-Android
-
 
 
 
