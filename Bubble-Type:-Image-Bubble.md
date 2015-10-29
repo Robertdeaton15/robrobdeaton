@@ -13,11 +13,11 @@ The image bubble is used for displaying image messages.
 Type bubble.ImageType
 ```
 Contains the resource type of the Bubble's image.  
-Can be either `Url` for a URL requested audio file, or `File` for an attached audio file
+Can be either `Url` for a URL requested image file, or `File` for an attached image file
 
 Example:
 ```c#
-type = bubble.AudioType;
+type = bubble.ImageType;
 //type is now equal to Url
 ```
 
