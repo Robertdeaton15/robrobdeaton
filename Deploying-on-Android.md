@@ -18,7 +18,7 @@ At this point of time, unfortunately Disa.Android does not support PCL work. If 
 
 ## An Icon Is Required
 
-Before deploying to Android, it's necessary to include an icon in your plugin. Please visit https://github.com/Disa-im/DisaOpenSource/wiki/Creating-A-Plugin-Icon for more information.
+Before deploying to Android, it's necessary to include an icon in your plugin. Please visit [Creating a Plugin Icon](https://github.com/Disa-im/DisaOpenSource/wiki/Creating-A-Plugin-Icon) for more information.
 
 ## Registering Your Plugin For Deployment
 
