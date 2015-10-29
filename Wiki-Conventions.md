@@ -11,6 +11,9 @@ All segment headers should be written in Markdown \#\#, which is the second Head
 
 All other guide content should be organized in about 2 - 4 other segments, whose headings are also formatted with Markdown \#\#.
 
+On the bottom of each guide page there should be a further reading segment.  
+It should have the heading `##Further reading` and contain a Markdown `*` unordered list with links to pages that are likely to be relevant to the reader. 
+
 ##Structure of the Wiki home page
 The wiki home page should contain a basic overview of important topics covered in the Wiki. The upper part of this page should be especially oriented towards new developers to give them an easy start.
 
