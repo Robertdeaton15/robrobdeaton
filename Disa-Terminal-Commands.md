@@ -18,7 +18,7 @@ This command sends a [Text Bubble](//github.com/Disa-im/DisaOpenSource/wiki/Bubb
 ***
 
 `deploy-register [ServiceName] [PathOfAssemblies]`  
-This command registers a plugin for deployment. [Learn more](//github.com/Disa-im/DisaOpenSource/wiki/Deploying-on-Android)
+This command registers a plugin for deployment. [Learn more](//github.com/Disa-im/DisaOpenSource/wiki/Deploying-on-Android#registering-your-plugin-for-deployment)
 
 `deploy-unregister [ServiceName]`  
 This command removes the registration of a plugin to start over again with `deploy-register`.
