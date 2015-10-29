@@ -6,6 +6,7 @@ Right click on your plugin project in Xamarin Studio to unveil the contextual me
 
 On the left now choose 'XML' and name your file 'PluginManifest.xml'. Hit 'New' to finish.
 
+![](http://i.imgur.com/XlmsE5p.png?1)
 
 ##Filling in the information
 Double click on your newly created `PluginManifest.xml` to reveal its contents (It should be blank right now! :smile:)
