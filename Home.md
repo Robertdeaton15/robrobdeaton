@@ -40,11 +40,20 @@ _INTERMEDIATE LEVEL_
 
 
 
-##Disa concepts
+##Reference
 
 **[Glossary](//github.com/Disa-im/DisaOpenSource/wiki/Glossary)**  
 Get to know all the important vocabulary you need to know to get around the Disa Framework.  
 If you do not know what for example a bubble is, definitely check it out.  
+_BEGINNER LEVEL_
+
+**[Bubble Types](//github.com/Disa-im/DisaOpenSource/wiki/Bubble-Types)**  
+Read through the list of available Bubble Types in Disa.  
+If you do not know what a bubble is check out the [Glossary](//github.com/Disa-im/DisaOpenSource/wiki/Glossary).  
+_BEGINNER LEVEL_
+
+**[Disa.Terminal Commands](//github.com/Disa-im/DisaOpenSource/wiki/Disa-Terminal-Commands)**  
+Learn about all the commands that the Disa Development Terminal has to offer.   
 _INTERMEDIATE LEVEL_
 
 
