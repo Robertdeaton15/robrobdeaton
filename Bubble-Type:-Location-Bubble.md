@@ -16,7 +16,7 @@ Contains the latitude of the location to show.
 
 Example:
 ```c#
-lati = bubble.Latitude;
+latitude = bubble.Latitude;
 ```
 
 ###Longitude
@@ -27,7 +27,7 @@ Contains the width of the bubbles sticker image in pixels.
 
 Example:
 ```c#
-long = bubble.Longitude;
+longitude = bubble.Longitude;
 ```
 
 ###Name
