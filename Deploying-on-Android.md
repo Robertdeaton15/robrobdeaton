@@ -30,7 +30,7 @@ Please note that Disa.Terminal will filter out all of the assemblies that it doe
 ##Deploying Your Plugin
 **Make sure the Disa Android app is set to Use Public Storage.**
 
-You will need a PluginManifest.xml file. This manifest file needs to be in the same directory as your assemblies are (i.e: _PathOfAssemblies_). To set one up, please view the Telegram branch of this repository and take a look at the Disa.Android.Telegram project. A tutorial is coming soon to explain this more in depth. =)
+You will need a PluginManifest.xml file. This manifest file needs to be in the same directory as your assemblies are (i.e: _PathOfAssemblies_). To set one up, check out this tutorial: [Creating the Plugin Manifest](//github.com/Disa-im/DisaOpenSource/wiki/Creating-the-Plugin-Manifest)
 
 To deploy the plugin, type:
 
