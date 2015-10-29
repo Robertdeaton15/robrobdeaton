@@ -46,6 +46,10 @@ __My Disa app is bricked on my Android device. Help!__
 
 Plugins are copied to /sdcard/disa/plugins/ on your Android device. If everything hits the fan and you brick your Disa Android install, just delete the associated folder in that directory (its your plugin name). You'll be up and running again!
 
+##Further reading
+* [Packaging Android Plugin for Release](//github.com/Disa-im/DisaOpenSource/wiki/Packaging-Android-Plugin-For-Release)
+* [Disa Terminal Commands](//github.com/Disa-im/DisaOpenSource/wiki/Disa-Terminal-Commands)
+
 
 
 
