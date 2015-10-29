@@ -1,1 +1,1 @@
-[![](http://s22.postimg.org/b2qxitext/disa_dev_banner_small.png)](//github.com/Disa-im/DisaOpenSource/wiki/_Sidebar/_edit)
+[![](http://s22.postimg.org/b2qxitext/disa_dev_banner_small.png)](//github.com/Disa-im/DisaOpenSource/wiki/)
