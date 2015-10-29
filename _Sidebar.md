@@ -1,3 +1,3 @@
-![](https://camo.githubusercontent.com/c39352fd221e4b3ff45810311cb8848b10fad1d8/687474703a2f2f7333302e706f7374696d672e6f72672f7365373777673062352f646973615f6465765f62616e6e65722e706e67)
+![](http://s22.postimg.org/b2qxitext/disa_dev_banner_small.png)
 
 ##Disa Developer Platform
