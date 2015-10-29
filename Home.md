@@ -65,7 +65,7 @@ If you can write well, you can help. If you can code well, you can also help.
 Even if you can "just" test well, you can also help and bring the Disa community forward.
 _ANY LEVEL_
 
-**[Wiki structure and conventions (Proposal)](//github.com/Disa-im/DisaOpenSource/wiki/Wiki-Conventions)**  
+**[Wiki structure and conventions](//github.com/Disa-im/DisaOpenSource/wiki/Wiki-Conventions)**  
 Learn about the conventions that should make this wiki consistent and readable.  
 Also get to know the structure that (most) wiki articles should follow.  
 _ANY LEVEL_
