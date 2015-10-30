@@ -1,2 +1,2 @@
-**The Disa Open Source Project**  
+**© The Disa Open Source Project**  
 If you have any questions please contact opensource@disa.im!
