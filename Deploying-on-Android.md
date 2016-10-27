@@ -25,6 +25,8 @@ To register the Android deployment, fire up Disa.Terminal, and type:
 _PluginName_ is your plugin name (e.g: Telegram). And, _PathOfAssemblies_ is where all the assemblies generated for your plugin are located (e.g: the debug/release output folder of your plugin's project). 
 The supplied path should be the full path e.g. */Users/username/Downloads/DisaOpenSource-master/Disa.Framework.WackyMessenger/*.
 
+![Example assemblies path (Telegram)](http://imgur.com/L0xRKzB.png)
+
 Please note that Disa.Terminal will filter out all of the assemblies that it doesn't need to package (i.e: the ones that ship with the Disa.Android build).
 
 ##Deploying Your Plugin
