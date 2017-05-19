@@ -7,7 +7,7 @@ This documentation should assist you when developing that next awesome plugin ag
 
 Click the pages on the right to get started. Also, you can choose from below.
 
-##Your first Plugin
+## Your first Plugin
 
 **[The Most Basic Plugin](//github.com/Disa-im/DisaOpenSource/wiki/The-Most-Basic-Plugin)**  
 Learn how to set up your IDE for Disa plugins.  
@@ -26,7 +26,7 @@ _BEGINNER LEVEL_
 
 
 
-##Tutorials - Step by step
+## Tutorials - Step by step
 
 **[Deploying your plugin to Android](//github.com/Disa-im/DisaOpenSource/wiki/Deploying-on-Android)**  
 Learn how to deploy your plugin to your Android device.  
@@ -40,7 +40,7 @@ _INTERMEDIATE LEVEL_
 
 
 
-##Reference
+## Reference
 
 **[Glossary](//github.com/Disa-im/DisaOpenSource/wiki/Glossary)**  
 Get to know all the important vocabulary you need to know to get around the Disa Framework.  
@@ -58,11 +58,11 @@ _INTERMEDIATE LEVEL_
 
 
 
-##Helping out
+## Helping out
 
 **[Where to help](//github.com/Disa-im/DisaOpenSource/wiki/Contributions)**  
 If you can write well, you can help. If you can code well, you can also help.  
-Even if you can "just" test well, you can also help and bring the Disa community forward.
+Even if you can "just" test well, you can also help and bring the Disa community forward.   
 _ANY LEVEL_
 
 **[Wiki structure and conventions](//github.com/Disa-im/DisaOpenSource/wiki/Wiki-Conventions)**  
