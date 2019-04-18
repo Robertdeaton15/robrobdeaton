@@ -1,0 +1,165 @@
+--------- beginning of main
+04-16 00:00:57.662 I/MultiDex(27636): VM with version 2.1.0 has multidex support
+04-16 00:00:57.662 I/MultiDex(27636): Installing application
+04-16 00:00:57.662 I/MultiDex(27636): VM has multidex support, MultiDex support library is disabled.
+04-16 00:00:57.662 I/MultiDex(27636): Installing application
+04-16 00:00:57.662 I/MultiDex(27636): VM has multidex support, MultiDex support library is disabled.
+04-16 00:00:57.682 D/FirebaseApp(27636): com.google.firebase.auth.FirebaseAuth is not linked. Skipping initialization.
+04-16 00:00:57.683 D/FirebaseApp(27636): com.google.firebase.crash.FirebaseCrash is not linked. Skipping initialization.
+04-16 00:00:57.684 D/FirebaseApp(27636): com.google.android.gms.measurement.AppMeasurement is not linked. Skipping initialization.
+04-16 00:00:57.684 I/FirebaseInitProvider(27636): FirebaseApp initialization successful
+04-16 00:00:57.797 D/androidlost(27636): All permissions accepted: false
+04-16 00:00:57.843 D/OpenGLRenderer(27636): HWUI GL Pipeline
+04-16 00:00:57.851 D/androidlost(27636): GCM: 
+04-16 00:00:57.851 D/androidlost(27636): is admin: false
+04-16 00:00:57.851 D/androidlost(27636): showAdmin: [true] [0] [false]
+04-16 00:00:57.852 D/androidlost(27636): No stored SIM key found - detecting and storing
+04-16 00:00:57.920 I/Adreno-EGL(27636): <qeglDrvAPI_eglInitialize:379>: QUALCOMM Build: 02/27/18, 3273d9c, I0b59f3a7cf
+04-16 00:00:57.937 I/OpenGLRenderer(27636): Initialized EGL, version 1.4
+04-16 00:00:57.938 D/OpenGLRenderer(27636): Swap behavior 2
+04-16 00:00:57.959 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:00:57.973 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:00.717 D/FirebaseInstanceId(27636): topic sync succeeded
+04-16 00:01:03.304 D/androidlost(27636): Results returned
+04-16 00:01:03.313 D/androidlost(27636): All permissions accepted: true
+04-16 00:01:03.313 D/androidlost(27636): First time registration
+04-16 00:01:03.405 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:06.727 D/androidlost(27636): Getting uid
+04-16 00:01:06.731 D/androidlost(27636): Returning uid: 351841092096108
+04-16 00:01:06.731 D/androidlost(27636): action getsettings
+04-16 00:01:06.731 D/androidlost(27636): androidversion 26
+04-16 00:01:06.732 D/androidlost(27636): clientversion 3.7
+04-16 00:01:06.732 I/androidlost(27636): uuid from prefs: 
+04-16 00:01:06.732 D/androidlost(27636): get uuid from filesystem
+04-16 00:01:06.733 I/androidlost(27636): Could not get uuid from filesystem
+04-16 00:01:06.733 I/androidlost(27636): Saving uuid to prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.733 I/androidlost(27636): Saving uuid to prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.743 D/androidlost(27636): got uuid: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.743 I/androidlost(27636): uuid from file: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.743 D/androidlost(27636): uuid c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.743 D/androidlost(27636): imei 351841092096108
+04-16 00:01:06.745 D/NetworkSecurityConfig(27636): No Network Security Config specified, using platform default
+04-16 00:01:06.747 D/androidlost(27636): Response: [0] 
+04-16 00:01:06.747 D/androidlost(27636): got settings: 
+04-16 00:01:06.747 D/androidlost(27636): settings commit
+04-16 00:01:06.750 I/androidlost(27636): Registering all emails at server
+04-16 00:01:06.750 D/androidlost(27636): Getting uid
+04-16 00:01:06.753 D/androidlost(27636): Returning uid: 351841092096108
+04-16 00:01:06.762 I/androidlost(27636): uuid from prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.762 D/androidlost(27636): Sending string to server: registration?email=cassiewhite595@gmail.com&gcm=dlgytYGZHTY:APA91bHzCsHid2FdfJVzDzilFPg6e7q6wwJJQpx_CeDYHKhfXGk7bbawOtnqxjO1jU16bWNtmrbmTnvMJ8pw9N1aCKDkgLl0oqnvYVms-mlgEbNHpFvE0XZ__VmGrARosSBiAPBpcJr1&imei=351841092096108&brand=motorola&device=james&clientversion=3.7&androidversion=26&uuid=c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.763 D/androidlost(27636): Sent string to server: registration?email=cassiewhite595@gmail.com&gcm=dlgytYGZHTY:APA91bHzCsHid2FdfJVzDzilFPg6e7q6wwJJQpx_CeDYHKhfXGk7bbawOtnqxjO1jU16bWNtmrbmTnvMJ8pw9N1aCKDkgLl0oqnvYVms-mlgEbNHpFvE0XZ__VmGrARosSBiAPBpcJr1&imei=351841092096108&brand=motorola&device=james&clientversion=3.7&androidversion=26&uuid=c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.771 D/androidlost(27636): Post [log] to web
+04-16 00:01:06.772 D/androidlost(27636): action log
+04-16 00:01:06.772 D/androidlost(27636): cmdid phone
+04-16 00:01:06.772 D/androidlost(27636): msg Google push key registration success!
+04-16 00:01:06.772 D/androidlost(27636): gcm dlgytYGZHTY:APA91bHzCsHid2FdfJVzDzilFPg6e7q6wwJJQpx_CeDYHKhfXGk7bbawOtnqxjO1jU16bWNtmrbmTnvMJ8pw9N1aCKDkgLl0oqnvYVms-mlgEbNHpFvE0XZ__VmGrARosSBiAPBpcJr1
+04-16 00:01:06.772 I/androidlost(27636): uuid from prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.772 D/androidlost(27636): uuid c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:06.772 D/androidlost(27636): Getting uid
+04-16 00:01:06.775 D/androidlost(27636): Returning uid: 351841092096108
+04-16 00:01:06.775 D/androidlost(27636): imei 351841092096108
+04-16 00:01:06.776 D/androidlost(27636): brand motorola
+04-16 00:01:06.776 D/androidlost(27636): device james
+04-16 00:01:06.776 D/androidlost(27636): androidversion 26
+04-16 00:01:06.777 D/androidlost(27636): clientversion 3.7
+04-16 00:01:06.777 D/androidlost(27636): warnings 
+04-16 00:01:06.778 D/androidlost(27636): log message: Google push key registration success!
+04-16 00:01:06.835 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:07.146 D/androidlost(27636): GET Response: [200] OK
+04-16 00:01:09.269 D/androidlost(27636): Enable administration
+04-16 00:01:12.816 D/androidlost(27636): Activity result 0 -1
+04-16 00:01:12.816 D/androidlost(27636): Admin OK
+04-16 00:01:12.885 D/androidlost(27636): showAdmin: [false] [8] [true]
+04-16 00:01:12.886 D/androidlost(27636): Post [log] to web
+04-16 00:01:12.886 D/androidlost(27636): action log
+04-16 00:01:12.886 D/androidlost(27636): cmdid phone
+04-16 00:01:12.886 D/androidlost(27636): msg Administrator rights added.
+04-16 00:01:12.886 D/androidlost(27636): gcm dlgytYGZHTY:APA91bHzCsHid2FdfJVzDzilFPg6e7q6wwJJQpx_CeDYHKhfXGk7bbawOtnqxjO1jU16bWNtmrbmTnvMJ8pw9N1aCKDkgLl0oqnvYVms-mlgEbNHpFvE0XZ__VmGrARosSBiAPBpcJr1
+04-16 00:01:12.887 I/androidlost(27636): uuid from prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:12.887 D/androidlost(27636): uuid c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:12.887 D/androidlost(27636): Getting uid
+04-16 00:01:12.889 D/androidlost(27636): Returning uid: 351841092096108
+04-16 00:01:12.889 D/androidlost(27636): imei 351841092096108
+04-16 00:01:12.889 D/androidlost(27636): brand motorola
+04-16 00:01:12.889 D/androidlost(27636): device james
+04-16 00:01:12.889 D/androidlost(27636): androidversion 26
+04-16 00:01:12.890 D/androidlost(27636): clientversion 3.7
+04-16 00:01:12.891 D/androidlost(27636): warnings 
+04-16 00:01:12.892 D/androidlost(27636): log message: Administrator rights added.
+04-16 00:01:12.908 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:15.193 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:28.994 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:33.097 D/androidlost(27636): Opening menu
+04-16 00:01:33.185 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:35.180 D/androidlost(27636): System services not available to Activities before onCreate()
+04-16 00:01:35.192 D/androidlost(27636): starting TroubleShooter
+04-16 00:01:35.193 D/androidlost(27636): onStart
+04-16 00:01:35.195 W/System.err(27636): android.content.pm.PackageManager$NameNotFoundException: com.androidlost.smshandler
+04-16 00:01:35.195 W/System.err(27636): 	at android.app.ApplicationPackageManager.getPackageInfoAsUser(ApplicationPackageManager.java:180)
+04-16 00:01:35.195 W/System.err(27636): 	at android.app.ApplicationPackageManager.getPackageInfo(ApplicationPackageManager.java:151)
+04-16 00:01:35.195 W/System.err(27636): 	at com.androidlost.TroubleShooterActivity$1.run(Unknown Source:15)
+04-16 00:01:35.195 W/System.err(27636): 	at java.lang.Thread.run(Thread.java:764)
+04-16 00:01:35.206 D/androidlost(27636): Getting uid
+04-16 00:01:35.206 D/androidlost(27636): Getting uid
+04-16 00:01:35.208 D/androidlost(27636): Returning uid: 351841092096108
+04-16 00:01:35.209 D/androidlost(27636): action getsettings
+04-16 00:01:35.209 D/androidlost(27636): androidversion 26
+04-16 00:01:35.209 D/androidlost(27636): clientversion 3.7
+04-16 00:01:35.209 D/androidlost(27636): Returning uid: 351841092096108
+04-16 00:01:35.210 I/androidlost(27636): uuid from prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:35.210 D/androidlost(27636): uuid c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:35.210 D/androidlost(27636): imei 351841092096108
+04-16 00:01:35.212 D/androidlost(27636): warnings [] [true]
+04-16 00:01:35.214 D/androidlost(27636): Post [c2dmtest] to web
+04-16 00:01:35.218 D/androidlost(27636): action c2dmtest
+04-16 00:01:35.218 D/androidlost(27636): cmdid phone
+04-16 00:01:35.218 D/androidlost(27636): msg 3862
+04-16 00:01:35.218 D/androidlost(27636): gcm dlgytYGZHTY:APA91bHzCsHid2FdfJVzDzilFPg6e7q6wwJJQpx_CeDYHKhfXGk7bbawOtnqxjO1jU16bWNtmrbmTnvMJ8pw9N1aCKDkgLl0oqnvYVms-mlgEbNHpFvE0XZ__VmGrARosSBiAPBpcJr1
+04-16 00:01:35.218 I/androidlost(27636): uuid from prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:35.218 D/androidlost(27636): uuid c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:35.218 D/androidlost(27636): Getting uid
+04-16 00:01:35.221 D/androidlost(27636): Returning uid: 351841092096108
+04-16 00:01:35.221 D/androidlost(27636): imei 351841092096108
+04-16 00:01:35.221 D/androidlost(27636): brand motorola
+04-16 00:01:35.221 D/androidlost(27636): device james
+04-16 00:01:35.221 D/androidlost(27636): androidversion 26
+04-16 00:01:35.222 D/androidlost(27636): clientversion 3.7
+04-16 00:01:35.222 D/androidlost(27636): warnings 
+04-16 00:01:35.223 D/androidlost(27636): tmp [] [false]
+04-16 00:01:35.244 W/Adreno-EGL(27636): <qeglDrvAPI_eglGetConfigAttrib:612>: EGL_BAD_ATTRIBUTE
+04-16 00:01:35.250 D/androidlost(27636): Test 1: SMS handler installed:  [false] [No SMS Handler app installed. See www.androidlost.com/smshandler.html for more info.]
+04-16 00:01:35.251 D/androidlost(27636): Test 2: Using site [true] [Responses from this phone will reach this site: https://androidlost.appspot.com/]
+04-16 00:01:35.252 D/androidlost(27636): Test 3: SMS allowed number set [false] [You have not set an SMS allowed number. If your phone has no internet you cannot control it!]
+04-16 00:01:35.253 D/androidlost(27636): Test 4: SMS PIN set [false] [You have not set an SMS PIN number. If your phone has no internet you cannot control it!]
+04-16 00:01:35.254 D/androidlost(27636): Test 5: App pincode [false] [Pin code for app not set, or it is set but no SMS pin is setup!]
+04-16 00:01:35.255 D/androidlost(27636): Test 6: Admin rights enabled [true] [You have enabled administrator rights for this app and should be able to lock the phone]
+04-16 00:01:35.256 D/androidlost(27636): Test 7: Testing android version [true] [OK 8.0.0]
+04-16 00:01:35.258 D/androidlost(27636): Test 8: SIM card changed check [false] [When your SIM card is changed you will not be notified!]
+04-16 00:01:35.259 D/androidlost(27636): Test 9: Testing internet connection [true] [OK]
+04-16 00:01:35.259 D/androidlost(27636): Test 10: Unique key on phone [true] [OK 351841092096108]
+04-16 00:01:35.261 D/androidlost(27636): Test 11: Background data enabled [true] [OK]
+04-16 00:01:35.262 D/androidlost(27636): Test 12: Custom SMS apps installed [true] [OK]
+04-16 00:01:35.263 D/androidlost(27636): Test 13: Phone has a google GCM push key [true] [OK]
+04-16 00:01:35.263 D/androidlost(27636): Test 14: Testing permissions granted [true] [OK]
+04-16 00:01:35.326 D/androidlost(27636): got settings: gcm#ZGxneXRZR1pIVFklM0FBUEE5MWJIekNzSGlkMkZkZkpWekR6aWxGUGc2ZTdxNnd3SkpRcHhfQ2VEWUhLaGZYR2s3YmJhd090bnF4ak8xalUxNmJXTnRtcmJtVG52TUo4cHc5TjFhQ0tEa2dMbDBvcW52WVZtcy1tbGdFYk5IcEZ2RTBYWl9fVm1HckFSb3NTQmlBUEJwY0pyMQ==|uuid#YzA5YTMwM2EtZWQyOC00Mzk3LTg5ZWItYjAyYjJjODQ0YjM0|serverclientversion#Mi43MA==|registrationKey#bnVsbA==|email#Y2Fzc2lld2hpdGU1OTUlNDBnbWFpbC5jb20=|status#TkVX
+04-16 00:01:35.328 I/androidlost(27636): uuid from prefs: c09a303a-ed28-4397-89eb-b02b2c844b34
+04-16 00:01:35.328 D/androidlost(27636): Test 15: Setting exists on server [true] [OK]
+04-16 00:01:35.330 D/androidlost(27636): status: NEW
+04-16 00:01:35.337 D/androidlost(27636): Test 16: Running on recommended version [true] [OK]
+04-16 00:01:35.339 D/androidlost(27636): Test 17: Same UUID on server [true] [OK]
+04-16 00:01:35.340 D/androidlost(27636): Test 18: Same email on phone as on server [true] [OK cassiewhite595@gmail.com]
+04-16 00:01:35.341 D/androidlost(27636): Test 19: Same GCM key on phone as on server  [true] [OK]
+04-16 00:01:35.341 D/androidlost(27636): Test 20: Account verified on server [false] [Account never verified on server]
+04-16 00:01:35.430 I/androidlost(27636): Received message
+04-16 00:01:35.431 D/androidlost(27636): cmd: c2dmtest_3862
+04-16 00:01:35.437 D/androidlost(27636): Got intent [4929973134163968] [c2dmtest_3862] [null]
+04-16 00:01:35.438 I/System.out(27636): GOT MESSAGE - GCM == dlgytYGZHTY:APA91bHzCsHid2FdfJVzDzilFPg6e7q6wwJJQpx_CeDYHKhfXGk7bbawOtnqxjO1jU16bWNtmrbmTnvMJ8pw9N1aCKDkgLl0oqnvYVms-mlgEbNHpFvE0XZ__VmGrARosSBiAPBpcJr1
+04-16 00:01:35.438 D/androidlost(27636): Got message [4929973134163968] c2dmtest_3862
+04-16 00:01:35.438 D/androidlost(27636): Got command c2dmtest
+04-16 00:01:35.439 D/androidlost(27636): c2dm push received: 3862
+04-16 00:01:36.223 D/androidlost(27636): tmp [3862] [true]
+04-16 00:01:36.225 D/androidlost(27636): Test 21: Sending push command from server [true] [OK]
+04-16 00:01:36.875 D/androidlost(27636): using dir [/storage/emulated/0/data/system/Ellehammer]
+04-16 00:01:36.882 D/androidlost(27636): creating dir [/storage/emulated/0/data] [true]
+04-16 00:01:36.883 D/androidlost(27636): creating dir [/storage/emulated/0/data/system] [true]
+04-16 00:01:36.884 D/androidlost(27636): creating dir [/storage/emulated/0/data/system/Ellehammer] [true]
